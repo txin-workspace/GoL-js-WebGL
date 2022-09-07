@@ -4,21 +4,21 @@ const world_size_y = 199;
 const start_life = 10000;
 
 // global var
-
 var i, j;
 var x, y;
 var neighbor;
 var world_switch = true;
 
+// global var for count
 var living = 0;
 var md = 0;
 var mb = 0;
 var max_die = 0;
 var max_born = 0;
-
 var fps = 0;
 var dt_start = 0;
 
+// some parameter
 const param_mutation = 0.1;
 const param_heredity = 0.8;
 const param_prop_effect = 0.001;
@@ -29,9 +29,11 @@ const mutation_lv2 = 1;
 const heredity_lv1 = 1;
 const heredity_lv2 = 0.5;
 
+// world buffer for now world and next world
 var world_buffer_1 = new Array();
 var world_buffer_2 = new Array();
 
+//initialize world
 for(i = 0; i < world_size_x; i++) {
     world_buffer_1[i] = new Array();
     world_buffer_2[i] = new Array();
@@ -43,7 +45,6 @@ for(i = 0; i < world_size_x; i++) {
         world_buffer_2[i][j] = {'status': 0, 'die': 0, 'born': 0};
     }
 }
-
 // set random life
 for(i = 0; i < start_life; i++){
     // random x,y
