@@ -1,0 +1,1 @@
+a simple js code for game of life
